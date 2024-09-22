@@ -25,5 +25,5 @@ function() {
   list(bread = 2, butter = 1, eggs = 6)
 }
 
-pr <- plumb("API.R")
+pr <- plumber::plumb("/usr/local/src/API.R")
 pr$run(host = "0.0.0.0", port = as.numeric(Sys.getenv("PORT")))
