@@ -22,4 +22,4 @@ function() {
 
 # Plumb and run the API
 pr <- plumber::plumb("API.R")
-pr$run(host = "0.0.0.0", port = as.numeric(Sys.getenv("PORT")))
+pr$run(host = "0.0.0.0", port = 8080)
