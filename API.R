@@ -3,9 +3,7 @@
 # SCRIPT : Test version to run a hello world api call
 ###############################################################################
 
-# Clean memory
-rm(list=ls())
- 
+
 # Libraries
 library(plumber)  
  
