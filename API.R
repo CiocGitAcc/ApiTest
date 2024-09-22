@@ -2,15 +2,10 @@
 # PROJECT: API
 # SCRIPT : Test version to run a hello world api call
 ###############################################################################
-
-
 # Libraries
 library(plumber)  
- 
-
 
 # api.R
-
 library(plumber)
 
 #* @get /fridge
@@ -25,5 +20,6 @@ function() {
   list(bread = 2, butter = 1, eggs = 6)
 }
 
+# Plumb and run the API
 pr <- plumber::plumb("/usr/local/src/API.R")
 pr$run(host = "0.0.0.0", port = as.numeric(Sys.getenv("PORT")))
