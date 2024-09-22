@@ -1,8 +1,12 @@
 # Use the official R image from Docker Hub
 FROM r-base
 
-# Install necessary R packages
-RUN R -e "install.packages('plumber', repos='http://cran.us.r-project.org')"
+# Install system dependencies and R packages
+RUN apt-get update && apt-get install -y \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libxml2-dev \
+    && R -e "install.packages('plumber', repos='http://cran.us.r-project.org')"
 
 # Copy your API script to the Docker image
 COPY ./API.R /usr/local/src/API.R
