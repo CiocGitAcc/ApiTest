@@ -21,5 +21,5 @@ function() {
 }
 
 # Plumb and run the API
-pr <- plumber::plumb("API.R")
+pr <- plumber::plumb("/usr/local/src/API.R")
 pr$run(host = "0.0.0.0", port = 8080)
