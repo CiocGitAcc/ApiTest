@@ -15,4 +15,4 @@ COPY ./API.R /usr/local/src/API.R
 EXPOSE 8080
 
 # Run the plumber API
-CMD ["R", "-e", "pr <- plumber::plumb('/usr/local/src/api.R'); pr$run(host='0.0.0.0', port=8080)"]
+CMD ["R", "-e", "pr <- plumber::plumb('/usr/local/src/API.R'); pr$run(host='0.0.0.0', port=8080)"]
