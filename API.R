@@ -5,9 +5,7 @@
 
 # Clean memory
 rm(list=ls())
-
-# Set working directory
-setwd("C:/Users/cioc/desktop/Projects/API")
+ 
 # Libraries
 library(plumber)  
  
@@ -28,3 +26,6 @@ function() {
 function() {
   list(bread = 2, butter = 1, eggs = 6)
 }
+
+pr <- plumb("API.R")
+pr$run(host = "0.0.0.0", port = as.numeric(Sys.getenv("PORT")))
