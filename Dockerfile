@@ -5,7 +5,7 @@ FROM r-base
 RUN R -e "install.packages('plumber', repos='http://cran.us.r-project.org')"
 
 # Copy your API script to the Docker image
-COPY ./api.R /usr/local/src/api.R
+COPY ./api.R /usr/local/src/API.R
 
 # Expose the port plumber will run on
 EXPOSE 8080
